@@ -966,6 +966,16 @@
           }
         }
       },
+      "ShopOnline.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ShopOnline.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ShopOnline.Models.dll": {}
+        }
+      },
       "ShopOnline.Web/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2723,6 +2733,11 @@
         "version.txt"
       ]
     },
+    "ShopOnline.Models/1.0.0": {
+      "type": "project",
+      "path": "../ShopOnline.Models/ShopOnline.Models.csproj",
+      "msbuildProject": "../ShopOnline.Models/ShopOnline.Models.csproj"
+    },
     "ShopOnline.Web/1.0.0": {
       "type": "project",
       "path": "../ShopOnline.Web/ShopOnline.Web.csproj",
@@ -2733,6 +2748,7 @@
     "net6.0": [
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.6",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.6",
+      "ShopOnline.Models >= 1.0.0",
       "ShopOnline.Web >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
@@ -2764,6 +2780,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\Dominik\\source\\repos\\ShopOnlineSolution\\ShopOnline.Models\\ShopOnline.Models.csproj": {
+              "projectPath": "C:\\Users\\Dominik\\source\\repos\\ShopOnlineSolution\\ShopOnline.Models\\ShopOnline.Models.csproj"
+            },
             "C:\\Users\\Dominik\\source\\repos\\ShopOnlineSolution\\ShopOnline.Web\\ShopOnline.Web.csproj": {
               "projectPath": "C:\\Users\\Dominik\\source\\repos\\ShopOnlineSolution\\ShopOnline.Web\\ShopOnline.Web.csproj"
             }
