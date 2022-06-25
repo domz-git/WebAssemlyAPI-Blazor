@@ -1,4 +1,10 @@
-﻿using System;
+﻿//This classes are based on the entity classes but are differently shaped based on the data that needs to be pased
+//between server and client
+
+//We need to add project reference on ShopOnline.Models to the dependencies on the ShopOnline.Api
+
+//These DTO classes need to have a public access modifier
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

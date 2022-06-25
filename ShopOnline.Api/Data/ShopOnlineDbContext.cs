@@ -1,4 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿//This class represent EFCore database context, this class inherits from EFCore's DBContext class
+//It is used to seed the database
+
+//This class has to be configured for dependency injection within the program.cs of ShopOnline.Api
+
+//In this project database is seeded with prepared data so there are no create, read, update or
+//delete methods
+using Microsoft.EntityFrameworkCore;
 using ShopOnline.Api.Entities;
 
 namespace ShopOnline.Api.Data
@@ -9,7 +16,10 @@ namespace ShopOnline.Api.Data
         {
 
         }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+
+		//We are seeding the database by overriding a method OnModelCreating that exists within the
+		//DBContext BaseClass
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
@@ -309,6 +319,9 @@ namespace ShopOnline.Api.Data
 				Name = "Shoes"
 			});
 		}
+
+		//We have to let entity framework know about out entities by using EFCore's DBset generic type
+		//so for each of out entities we have to include a public propery of type DBSet
 
 		public DbSet<Cart> Carts { get; set; }
 		public DbSet<CartItem> CartItems { get; set; }
