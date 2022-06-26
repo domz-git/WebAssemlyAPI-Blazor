@@ -1,14 +1,45 @@
 ﻿@page "/"
+@using ShopOnline.Models.DTOs
 @using ShopOnline.Web.Pages
 @inherits ProductsBase
 
-@if ()
+@if (Products == null)
 {
-    
+    <h3>Loading . . .</h3>
+}else{
+    <h3 class="mb-5">Products</h3>
+
+    var productCount = Products.Count();
+
+    @if(productCount>0){
+        const int itemsPerRow = 4;
+        var productRowList = new List<ProductDTO>();
+
+        @for(int i=0;i<productCount;i++){
+            productRowList = Products.Skip(i * itemsPerRow).Take(itemsPerRow).ToList();
+             
+            <div class="row mt-3">
+                @foreach(var item in productRowList)
+                {
+                    <div class="col-md-3">
+                        <a href="#">
+                            <div class="card">
+                                <img class="img-thumbnail" src="@item.ImageURL">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        @item.Name
+                                    </h5>
+                                    <p class="card-text">
+                                        <b>@item.Price.ToString("C")</b>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </a>
+                    </div>
+                }
+            </div>
+        }
+    }
 }
 
-@code {
-//We abstract the code for consuming our service functionallity within a base class (ProductBase.cs)
-//This razor component inherits from that base class
-
-}
