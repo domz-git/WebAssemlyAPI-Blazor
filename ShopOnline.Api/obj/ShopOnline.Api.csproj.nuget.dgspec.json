@@ -161,7 +161,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Dominik\\source\\repos\\ShopOnlineSolution\\ShopOnline.Models\\ShopOnline.Models.csproj": {
+                "projectPath": "C:\\Users\\Dominik\\source\\repos\\ShopOnlineSolution\\ShopOnline.Models\\ShopOnline.Models.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
