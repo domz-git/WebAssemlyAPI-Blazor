@@ -6,127 +6,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Images\Beauty\Beauty1.png" />
-    <None Remove="Images\Beauty\Beauty2.png" />
-    <None Remove="Images\Beauty\Beauty3.png" />
-    <None Remove="Images\Beauty\Beauty4.png" />
-    <None Remove="Images\Beauty\Beauty5.png" />
-    <None Remove="Images\Electronic\electronic4.png" />
-    <None Remove="Images\Electronic\electronic5.png" />
-    <None Remove="Images\Electronic\Electronics1.png" />
-    <None Remove="Images\Electronic\electronics2.png" />
-    <None Remove="Images\Electronic\Electronics3.png" />
-    <None Remove="Images\Electronic\technology6.png" />
-    <None Remove="Images\Furniture\Furniture1.png" />
-    <None Remove="Images\Furniture\Furniture2.png" />
-    <None Remove="Images\Furniture\Furniture3.png" />
-    <None Remove="Images\Furniture\Furniture4.png" />
-    <None Remove="Images\Furniture\Furniture6.png" />
-    <None Remove="Images\Furniture\Furniture7.png" />
-    <None Remove="Images\Shoes\Shoes1.png" />
-    <None Remove="Images\Shoes\Shoes2.png" />
-    <None Remove="Images\Shoes\Shoes3.png" />
-    <None Remove="Images\Shoes\shoes4.png" />
-    <None Remove="Images\Shoes\Shoes5.png" />
-    <None Remove="Images\Shoes\Shoes6.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Images\Beauty\Beauty1.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Beauty\Beauty2.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Beauty\Beauty3.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Beauty\Beauty4.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Beauty\Beauty5.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Electronic\electronic4.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Electronic\electronic5.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Electronic\Electronics1.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Electronic\electronics2.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Electronic\Electronics3.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Electronic\technology6.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Furniture\Furniture1.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Furniture\Furniture2.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Furniture\Furniture3.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Furniture\Furniture4.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Furniture\Furniture6.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Furniture\Furniture7.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Shoes\Shoes1.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Shoes\Shoes2.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Shoes\Shoes3.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Shoes\shoes4.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Shoes\Shoes5.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="Images\Shoes\Shoes6.png">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>
-
  
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.5" />
@@ -146,11 +25,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Pages\Products.razor" />
+    <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\Images\" />
+    <UpToDateCheckInput Remove="Pages\DisplayProducts.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\DisplayProducts.razor" />
   </ItemGroup>
 
 </Project>

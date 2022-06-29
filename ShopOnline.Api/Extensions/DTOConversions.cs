@@ -35,5 +35,20 @@ namespace ShopOnline.Api.Extensions
                         CategoryName = productCategory.Name
                     }).ToList();
         }
+
+        public static ProductDTO ConvertToDTO(this Product product, ProductCategory productCategory)
+        {
+            return new ProductDTO
+            {
+                Id = product.Id,
+                Name = productCategory.Name,
+                Description = product.Description,
+                ImageURL = product.ImageURL,
+                Price = product.Price,
+                Quantity = product.Quantity,
+                CategoryId = product.CategoryId,
+                CategoryName = productCategory.Name
+            };
+        }
     }
 }

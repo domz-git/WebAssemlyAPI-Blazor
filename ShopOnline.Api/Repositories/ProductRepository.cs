@@ -28,15 +28,21 @@ namespace ShopOnline.Api.Repositories
             var categories = await this.shopOnlineDbContext.ProductCategories.ToListAsync();
             return categories;
         }
-
-        public Task<ProductCategory> GetCategory(int id)
+        
+        public async Task<ProductCategory> GetCategory(int id)
         {
-            throw new NotImplementedException();
+            var category = await this.shopOnlineDbContext.ProductCategories.SingleOrDefaultAsync(c => c.Id == id);
+            return category;
         }
+        //Here we retrive the data of a single item by using FindAsync method, by using id that mathes the id
+        //of the item we are retrieving
 
-        public Task<Product> GetItem(int id)
+        //We have to expose the functionallity to a calling client by implementing code that gets executed in action
+        //to an appriopriate HttpGet request
+        public async Task<Product> GetItem(int id)
         {
-            throw new NotImplementedException();
+            var product = await this.shopOnlineDbContext.Products.FindAsync(id);
+            return product;
         }
         //This method returns all the products from the products table, IEnumerable collection of products from db
         //Since we want the code to run async we have to use await

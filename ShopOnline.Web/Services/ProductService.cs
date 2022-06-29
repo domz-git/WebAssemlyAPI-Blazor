@@ -16,6 +16,34 @@ namespace ShopOnline.Web.Services
         {
             this.httpClinet = httpClinet;
         }
+
+        public async Task<ProductDTO> GetItem(int id)
+        {
+            try
+            {
+                var response = await httpClinet.GetAsync($"api/Product/{id}");
+                if (response.IsSuccessStatusCode)
+                {
+                    if (response.StatusCode==System.Net.HttpStatusCode.NoContent)
+                    {
+                        return default (ProductDTO);
+                    }
+                    return await response.Content.ReadFromJsonAsync<ProductDTO>();
+                }
+                else
+                {
+                    var message = await response.Content.ReadAsStringAsync();
+                    throw new Exception(message);
+                }
+                
+            }
+            catch (Exception)
+            {
+                //Log excetion
+                throw;
+            }
+        }
+
         public async Task<IEnumerable<ProductDTO>> GetItems()
         {
             try
@@ -35,14 +63,29 @@ namespace ShopOnline.Web.Services
 
                 //The web API will invoke the GetItem method within the ProductController class of web API
                 //component based on that string information ("api/Product")
-                var products = await this.httpClinet.GetFromJsonAsync<IEnumerable<ProductDTO>>("api/Product");
-                return products;
+                var response = await this.httpClinet.GetAsync("api/Product");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+                    {
+                        return Enumerable.Empty<ProductDTO>();
+                    }
+                    return await response.Content.ReadFromJsonAsync<IEnumerable<ProductDTO>>();
+                }
+                else
+                {
+                    var message = await response.Content.ReadAsStringAsync();
+                    throw new Exception(message);
+                }
+                
             }
             catch (Exception)
             {
 
                 throw;
             }
+
         }
     }
 }

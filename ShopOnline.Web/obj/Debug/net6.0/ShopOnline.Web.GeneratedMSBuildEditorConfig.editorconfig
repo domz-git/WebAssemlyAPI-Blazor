@@ -22,6 +22,14 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Dominik/source/repos/ShopOnlineSolution/ShopOnline.Web/Pages/DisplayError.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzcGxheUVycm9yLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dominik/source/repos/ShopOnlineSolution/ShopOnline.Web/Pages/ProductDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdERldGFpbHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Dominik/source/repos/ShopOnlineSolution/ShopOnline.Web/Pages/Products.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -37,6 +45,14 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/Dominik/source/repos/ShopOnlineSolution/ShopOnline.Web/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dominik/source/repos/ShopOnlineSolution/ShopOnline.Web/Pages/DisplayProducts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzcGxheVByb2R1Y3RzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-r631xo10ml
+
+[C:/Users/Dominik/source/repos/ShopOnlineSolution/ShopOnline.Web/Pages/LoadingAnimation.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9hZGluZ0FuaW1hdGlvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-v0xmf6vecm
 
 [C:/Users/Dominik/source/repos/ShopOnlineSolution/ShopOnline.Web/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=

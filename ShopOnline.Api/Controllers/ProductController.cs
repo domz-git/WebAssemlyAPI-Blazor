@@ -23,7 +23,7 @@ namespace ShopOnline.Api.Controllers
             this.productRepository = productRepository;
         }
 
-        //This method is used to GET product data and returning it to the client
+        //This method is used to GET products data and returning it to the client
         //Thats we are using HttpGet attribute
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProductDTO>>> GetItems()
@@ -50,6 +50,46 @@ namespace ShopOnline.Api.Controllers
 
                     var productDTOs = products.ConvertToDTO(productCategories);
                     return Ok(productDTOs);
+                }
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                                  "Error retrieving data from database");
+            }
+        }
+        //This method is used to GET one single product data and returning it to the client
+        //Thats we are using HttpGet attribute with included parameter called id
+
+        //This id representes the id value of the item we want to retrieve 
+
+        //Within the [HttpGet] attribute we have to include appripriate root template information
+        
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<ProductDTO>> GetItem(int id)
+        {
+            try
+            {
+                //Here we call productRepositorie's GetItem method to return of type product
+                //to this action method
+                var product = await this.productRepository.GetItem(id);
+
+                if (product == null)
+                {
+                    return BadRequest();
+                }
+                else
+                {
+                    //Here we join the product to the product category with the collection of products so that we
+                    //can return a collection of productDTO's to the client which will include the category name
+
+                    //Here we implement an extension method ConvertToDTO (located in Extensions folder) to return a collection
+                    //type of productDTO's to this action method
+                    var productCategory = await this.productRepository.GetCategory(product.CategoryId);
+
+                    var productDTO = product.ConvertToDTO(productCategory);
+
+                    return Ok(productDTO);
                 }
             }
             catch (Exception)

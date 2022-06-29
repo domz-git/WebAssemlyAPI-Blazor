@@ -12,10 +12,10 @@ namespace ShopOnline.Web.Pages
         //Product.razor component
 
         [Inject]
-        public IProductService ProductService { get; set; }
+        public IProductService? ProductService { get; set; }
 
         //Next, we create a public property to expose an IEnumerable collection of objects of type ProductDTO
-        public IEnumerable<ProductDTO> Products { get; set; }
+        public IEnumerable<ProductDTO>? Products { get; set; }
 
         //Now we need our code that retrieves the product data from the server, web API component, to run when
         //Products.razor component is first invoked 
@@ -25,6 +25,17 @@ namespace ShopOnline.Web.Pages
         protected override async Task OnInitializedAsync()
         {
             Products = await ProductService.GetItems();
+        }
+        protected IOrderedEnumerable<IGrouping<int, ProductDTO>> GetGroupedProductsByCategory()
+        {
+            return from product in Products
+                   group product by product.CategoryId into productByCatGroup
+                   orderby productByCatGroup.Key
+                   select productByCatGroup;
+        }
+        protected string GetCategoryName(IGrouping<int, ProductDTO> groupedProductDTO)
+        {
+            return groupedProductDTO.FirstOrDefault(pg => pg.CategoryId == groupedProductDTO.Key).CategoryName;
         }
 
     }
