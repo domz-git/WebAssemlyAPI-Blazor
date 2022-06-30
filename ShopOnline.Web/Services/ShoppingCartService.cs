@@ -42,7 +42,26 @@ namespace ShopOnline.Web.Services
             }
         }
 
-        public async Task<IEnumerable<CartItemDTO>> GetItems(int userId)
+        public async Task<CartItemDTO> DeleteItem(int id)
+        {
+            try
+            {
+                var response = await httpClient.DeleteAsync($"api/ShoppingCart/{id}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadFromJsonAsync<CartItemDTO>();
+                }
+                return default(CartItemDTO);
+            }
+            catch (Exception)
+            {
+                //Log exception
+                throw;
+            }
+        }
+
+        public async Task<List<CartItemDTO>> GetItems(int userId)
         {
             var response = await httpClient.GetAsync($"api/ShoppingCart/{userId}/GetItems");
             //This code places a http GET request to the GetItems action method and if content is returned,
@@ -51,9 +70,9 @@ namespace ShopOnline.Web.Services
             {
                 if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
                 {
-                    return Enumerable.Empty<CartItemDTO>();
+                    return Enumerable.Empty<CartItemDTO>().ToList();
                 }
-                return await response.Content.ReadFromJsonAsync<IEnumerable<CartItemDTO>>();
+                return await response.Content.ReadFromJsonAsync<List<CartItemDTO>>();
             }
             else
             {

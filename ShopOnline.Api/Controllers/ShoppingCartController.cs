@@ -147,6 +147,37 @@ namespace ShopOnline.Api.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
+        //Here we use HttpDelete, and declare root template information by passing in an appropriate string
+        //argument to the HttpDelete atribute, id needs to be part of URI
+        
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult<CartItemDTO>> DeleteItem(int id)
+        {
+            try
+            {
+                var cartItem = await this.shoppingCartRepository.DeleteItem(id);
+
+                if (cartItem == null)
+                {
+
+                    return NotFound();
+                }
+                var product = await this.productRepository.GetItem(cartItem.ProductId);
+
+                if (product == null)
+                {
+                    return NotFound();
+                }
+                var cartItemDTO = cartItem.ConvertToDTO(product);
+
+                return Ok(cartItemDTO);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
 
 
 
