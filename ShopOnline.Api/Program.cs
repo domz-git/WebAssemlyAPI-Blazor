@@ -19,6 +19,8 @@ builder.Services.AddDbContextPool<ShopOnlineDbContext>(options => options.UseSql
 );
 //Here is ProductRepository class registered with the dependency injection system
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+//Here is ShoppingCartRepository class registered with the dependency injection system
+builder.Services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
 
 var app = builder.Build();
 

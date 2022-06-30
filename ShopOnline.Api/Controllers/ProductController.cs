@@ -1,8 +1,7 @@
 ﻿//This controller returns data to the calling client 
 
-//Object of type ProductRepository is automatically injected into out controller class's constructor via dependency
+//Object of type ProductRepository is automatically injected into our controller class's constructor via dependency
 //injection
-
 
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -24,7 +23,7 @@ namespace ShopOnline.Api.Controllers
         }
 
         //This method is used to GET products data and returning it to the client
-        //Thats we are using HttpGet attribute
+        //Thats why we are using HttpGet attribute
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProductDTO>>> GetItems()
         {
