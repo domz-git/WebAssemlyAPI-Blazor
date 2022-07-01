@@ -1,6 +1,8 @@
-﻿using ShopOnline.Models.DTOs;
+﻿using Newtonsoft.Json;
+using ShopOnline.Models.DTOs;
 using ShopOnline.Web.Services.Contracts;
 using System.Net.Http.Json;
+using System.Text;
 
 namespace ShopOnline.Web.Services
 {
@@ -79,6 +81,39 @@ namespace ShopOnline.Web.Services
                 var message = await response.Content.ReadAsStringAsync();
                 throw new Exception($"Http status:{response.StatusCode} - Message:{message}");
             }
+        }
+
+        public async Task<CartItemDTO> UpdateItem(CartItemQuantityUpdateDTO cartItemQuantityUpdateDTO)
+        {
+            try
+            {
+                //First we have to serialize the DTO we want to pass to the server into json format
+                var jsonRequest = JsonConvert.SerializeObject(cartItemQuantityUpdateDTO);
+                
+                //Then we create a object of type StringContent to that we can pass the reference data
+                //in the appropraite format to the server
+                var content = new StringContent(jsonRequest, Encoding.UTF8, "application/json-patch+json");
+
+                //Here we all the PatchAsync method on our httpClient object and pass in the appropriate URI
+                var response = await httpClient.PatchAsync($"api/ShoppingCart/{cartItemQuantityUpdateDTO.CartItemId}", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return await response.Content.ReadFromJsonAsync<CartItemDTO>();
+                }
+
+                return null;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public Task UpdateQuantity(CartItemQuantityUpdateDTO updateItemDTO)
+        {
+            throw new NotImplementedException();
         }
     }
 }

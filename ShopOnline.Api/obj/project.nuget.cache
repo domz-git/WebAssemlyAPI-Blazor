@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CK3RTSUOCh4fQBKoIs5MLCcOXsqiBK1fInr06xBvW3og/DqpzpN3si+wsO7LZ+lXpGrUfQJ73JQ9sJZAPNrd3g==",
+  "dgSpecHash": "/11vR4+N5kXjmbt7vYcEnVY2/FJSUNaUAfu55M1cREK8N/o0QIjaIOLbSJJmdlPBMq6HdFKLti/T0tobS/Z07Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Dominik\\source\\repos\\ShopOnlineSolution\\ShopOnline.Api\\ShopOnline.Api.csproj",
   "expectedPackageFiles": [
@@ -51,6 +51,7 @@
     "C:\\Users\\Dominik\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Dominik\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Dominik\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Dominik\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Dominik\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\Dominik\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\Dominik\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

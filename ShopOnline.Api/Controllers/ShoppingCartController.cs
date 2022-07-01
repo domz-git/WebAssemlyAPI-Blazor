@@ -180,6 +180,37 @@ namespace ShopOnline.Api.Controllers
         }
 
 
+        //Here we expose the UpdateQuantity method functionality to the client through an action method
+        //We use HttpPatch because we want to partially update the resource
+
+        [HttpPatch("{id:int}")]
+        public async Task<ActionResult<CartItemDTO>> UpdateQuantity(int id, CartItemQuantityUpdateDTO cartItemQuantityUpdateDTO)
+        {
+            try
+            {
+                //Here we call the UpdateQuantity() method od the shoppingCartRepository object with the 
+                //quantity value passed into out action method by the client 
+                var cartItem = await this.shoppingCartRepository.UpdateQuantity(id, cartItemQuantityUpdateDTO);
+
+                if (cartItem == null)
+                {
+                    return NotFound();
+                }
+
+                var product = await this.productRepository.GetItem(cartItem.ProductId);
+
+                var cartItemDTO = cartItem.ConvertToDTO(product);
+
+                return Ok(cartItemDTO);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+
 
     }
 }

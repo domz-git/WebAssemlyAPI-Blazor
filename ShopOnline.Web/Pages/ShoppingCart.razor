@@ -19,7 +19,11 @@
                     <div class="col-md-8">
                         <h5>@item.ProductName</h5>
                         <div class="mb-4">@item.ProductDescription</div>
-                        <span>Price: <b>@item.Price.ToString("C")</b></span>
+                        <span>
+                            Price: <b>@item.Price.ToString("C")</b>
+                            <input @oninput="()=>UpdateQuantity_Input(item.Id)" type="number" @bind="@item.Quantity"/>
+                            <button data-itemId="@item.Id" class="btn btn-info updateQuantity" @onclick="(() => UpdateQuantity_Click(item.Id, item.Quantity))">Update</button>
+                        </span>
                         <div>
                             <button @onclick="(() => DeleteCartItem_Click(item.Id))" 
                                 class="btn btn-danger sm">Remove</button>
@@ -32,7 +36,7 @@
         <div class="col-md-3">
             <h5>Cart Summary</h5>
             <div class="mt-2">
-                <div>Total - </div>
+                <div>Total - (@TotalQuantity items)&nbsp;<b>@TotalPrice</b></div>
                 <a href="#" class="btn btn-success">
                     <span class="oi oi-credit-card"></span>&nbsp; Proceed to Checkout
                 </a>

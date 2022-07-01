@@ -75,3 +75,4 @@ C:\Users\Dominik\source\repos\ShopOnlineSolution\ShopOnline.Api\bin\Debug\net6.0
 C:\Users\Dominik\source\repos\ShopOnlineSolution\ShopOnline.Api\bin\Debug\net6.0\ShopOnline.Web.pdb
 C:\Users\Dominik\source\repos\ShopOnlineSolution\ShopOnline.Api\bin\Debug\net6.0\ShopOnline.Models.dll
 C:\Users\Dominik\source\repos\ShopOnlineSolution\ShopOnline.Api\bin\Debug\net6.0\ShopOnline.Models.pdb
+C:\Users\Dominik\source\repos\ShopOnlineSolution\ShopOnline.Api\bin\Debug\net6.0\Newtonsoft.Json.dll

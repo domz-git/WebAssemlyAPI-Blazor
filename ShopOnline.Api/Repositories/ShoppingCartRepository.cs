@@ -63,9 +63,10 @@ namespace ShopOnline.Api.Repositories
             {
                 this.shopOnlineDbContext.CartItems.Remove(item);
                 await this.shopOnlineDbContext.SaveChangesAsync();
-                
+                return item;
             }
-            return item;
+            return null;
+            
         }
 
         public async Task<CartItem> GetItem(int id)
@@ -103,10 +104,18 @@ namespace ShopOnline.Api.Repositories
                           }).ToListAsync();
 
         }
-
-        public Task<CartItem> UpdateQuantity(int id, CartItemQuantityUpdateDTO cartItemQuantityUpdateDTO)
+        //Here we implement the logic to update the quantity of items
+        public async Task<CartItem> UpdateQuantity(int id, CartItemQuantityUpdateDTO cartItemQuantityUpdateDTO)
         {
-            throw new NotImplementedException();
+            var item = await this.shopOnlineDbContext.CartItems.FindAsync(id);
+
+            if (item != null)
+            {
+                item.Quantity = cartItemQuantityUpdateDTO.Quantity;
+                await this.shopOnlineDbContext.SaveChangesAsync();
+                return item;
+            }
+            return null;
         }
     }
 }
